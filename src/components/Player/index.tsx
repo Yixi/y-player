@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './style.module.less'
+import AudioSpectrum from '../AudioSpectrum'
 
 interface Track {
   id: string
@@ -189,6 +190,11 @@ const Player: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              <AudioSpectrum
+                audioElement={audioRef.current}
+                isPlaying={isPlaying}
+              />
 
               <div className={styles.controls}>
                 <div className={styles.progressSection}>
