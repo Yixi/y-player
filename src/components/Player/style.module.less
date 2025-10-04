@@ -1,0 +1,398 @@
+@import "../../styles/variable.less";
+
+.player {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.playerContainer {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #718096;
+  margin: 0;
+}
+
+.uploadSection {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  background: #f7fafc;
+}
+
+.uploadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.fileInput {
+  display: none;
+}
+
+.formatInfo {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #718096;
+}
+
+.nowPlaying {
+  margin-bottom: 30px;
+}
+
+.trackInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.albumArt {
+  flex-shrink: 0;
+}
+
+.trackDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trackMeta {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.controls {
+  margin-bottom: 30px;
+}
+
+.progressSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.time {
+  font-size: 12px;
+  color: #718096;
+  min-width: 40px;
+  text-align: center;
+}
+
+.progressBar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e2e8f0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(
+      to right,
+      #667eea 0%,
+      #667eea var(--progress, 0%),
+      #e2e8f0 var(--progress, 0%),
+      #e2e8f0 100%
+    );
+  }
+
+  &::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e8f0;
+  }
+
+  &::-moz-range-progress {
+    height: 6px;
+    border-radius: 3px;
+    background: #667eea;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #f7fafc;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+
+  &:hover:not(:disabled) {
+    background: #667eea;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.playButton {
+  width: 64px;
+  height: 64px;
+  background: #667eea;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background: #5568d3;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.volumeSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f7fafc;
+  border-radius: 12px;
+}
+
+.volumeIcon {
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.volumeBar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: #e2e8f0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: #e2e8f0;
+  }
+
+  &::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: #e2e8f0;
+  }
+}
+
+.volumeValue {
+  font-size: 12px;
+  color: #718096;
+  min-width: 40px;
+  text-align: right;
+}
+
+.playlist {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+.playlistTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: @Black;
+  margin: 0 0 16px 0;
+}
+
+.playlistItems {
+  max-height: 300px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f7fafc;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a0aec0;
+    }
+  }
+}
+
+.playlistItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f7fafc;
+  }
+
+  &.active {
+    background: #edf2f7;
+    color: #667eea;
+    font-weight: 500;
+  }
+}
+
+.trackNumber {
+  font-size: 14px;
+  color: #a0aec0;
+  min-width: 24px;
+  text-align: center;
+}
+
+.trackTitle {
+  flex: 1;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playingIndicator {
+  color: #667eea;
+  flex-shrink: 0;
+}
