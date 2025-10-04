@@ -129,8 +129,7 @@ const Player: React.FC = () => {
     <div className={styles.player}>
       <div className={styles.playerContainer}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Y-Player</h1>
-          <p className={styles.subtitle}>支持多种音频格式的音乐播放器</p>
+          <h1 className={styles.title}>SoundSphere</h1>
         </div>
 
         <div className={styles.uploadSection}>
