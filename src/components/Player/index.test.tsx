@@ -9,8 +9,7 @@ describe('Player component', () => {
   test('should render player interface correctly', () => {
     render(<Player />)
 
-    expect(screen.getByText('Y-Player')).toBeInTheDocument()
-    expect(screen.getByText('支持多种音频格式的音乐播放器')).toBeInTheDocument()
+    expect(screen.getByText('SoundSphere')).toBeInTheDocument()
     expect(screen.getByText('添加音乐文件')).toBeInTheDocument()
     expect(
       screen.getByText(/支持格式.*MP3.*WAV.*FLAC.*APE/),
