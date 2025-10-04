@@ -29,7 +29,7 @@
   border-radius: 32px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   padding: 40px;
-  max-width: 700px;
+  max-width: 1200px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -136,16 +136,31 @@
   color: #64748b;
 }
 
+.mainContent {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.playerSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.playlistSection {
+  width: 320px;
+  flex-shrink: 0;
+}
+
 .nowPlaying {
   margin-bottom: 30px;
 }
 
 .trackInfo {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 40px 20px;
+  padding: 30px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 24px;
   color: white;
@@ -154,8 +169,8 @@
 
 .albumArt {
   flex-shrink: 0;
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   border-radius: 16px;
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   display: flex;
@@ -164,16 +179,15 @@
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
   
   svg {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 }
 
 .trackDetails {
   flex: 1;
   min-width: 0;
-  text-align: center;
-  width: 100%;
+  text-align: left;
 }
 
 .trackName {
@@ -407,8 +421,11 @@
 }
 
 .playlist {
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
-  padding-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100%;
 }
 
 .playlistTitle {
@@ -419,7 +436,7 @@
 }
 
 .playlistItems {
-  max-height: 300px;
+  max-height: 500px;
   overflow-y: auto;
 
   &::-webkit-scrollbar {
